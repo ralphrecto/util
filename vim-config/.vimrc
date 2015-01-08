@@ -32,7 +32,7 @@ map ,, :CtrlP ~/<Enter>
 map == :bnext<Enter>
 map -- :bprev<Enter>
 
-colorscheme hybrid 
+colorscheme molokai
 
 let g:netrw_liststyle=3
 " Ignore some folders and files for CtrlP indexing
