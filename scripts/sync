@@ -1,0 +1,4 @@
+#!/bin/sh
+
+chmod a+x ./*.sh
+for i in `ls *.sh | sed s/\.sh//g`; do cp ./$i.sh /usr/bin/$i; done

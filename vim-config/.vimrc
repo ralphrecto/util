@@ -47,5 +47,3 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 nmap j gj
 nmap k gk
-
-:highlight LineNr ctermfg=grey
