@@ -28,9 +28,7 @@ map  N <Plug>(easymotion-prev)
 
 map .. :ls<Enter>
 map ,, :CtrlP ~/<Enter>
-
-map == :bnext<Enter>
-map -- :bprev<Enter>
+nnoremap -- :buffers<CR>:buffer<Space>
 
 colorscheme molokai
 
@@ -45,5 +43,9 @@ let g:ctrlp_custom_ignore = {
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-nmap j gj
-nmap k gk
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
