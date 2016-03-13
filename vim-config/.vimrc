@@ -17,6 +17,9 @@ set softtabstop=2
 set splitright
 set noswapfile
 set laststatus=2
+set cul
+set t_ut=
+set term=screen-256color
 
 autocmd FileType tex :NoMatchParen
 au FileType tex setlocal nocursorline
@@ -26,10 +29,9 @@ nmap ? <Plug>(easymotion-sn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
-map .. :NERDTreeToggle<CR>
-nnoremap -- :buffers<CR>:buffer<Space>
+map -- :NERDTreeToggle<CR>
 
-colorscheme molokai
+colorscheme lucid
 
 let g:netrw_liststyle=3
 " Ignore some folders and files for CtrlP indexing
@@ -51,3 +53,7 @@ nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 
 map <c-b> :CtrlPBuffer<cr>
 map <c-p> :CtrlP .<cr>
+
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+set rtp+=~/Users/ralphrecto/.vim/ocp-indent-vim
