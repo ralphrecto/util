@@ -11,7 +11,8 @@ git clone https://github.com/Lokaltog/vim-easymotion
 git clone https://github.com/kien/ctrlp.vim
 git clone https://github.com/tomasr/molokai
 git clone https://github.com/bling/vim-airline
+git clone https://github.com/vim-airline/vim-airline-themes
 git clone https://github.com/terryma/vim-multiple-cursors
 git clone https://github.com/scrooloose/nerdtree
 git clone https://github.com/scrooloose/nerdcommenter
-
+git clone https://github.com/ervandew/supertab
