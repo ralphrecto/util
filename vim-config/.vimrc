@@ -59,7 +59,7 @@ nnoremap <c-p> :bdelete<cr>
 " Leader maps
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
-nnoremap <Leader>o :e 
+nnoremap <Leader>o :e
 nnoremap <Leader>y :w !pbcopy<CR>
 
 let g:tmux_navigator_no_mappings = 1
@@ -98,7 +98,7 @@ au FileType ocaml call SuperTabSetDefaultCompletionType("<c-x><c-o>")
 let g:netrw_liststyle=3
 let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlP'
- 
+
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
    \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
@@ -107,9 +107,8 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Merlin
-"let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-"execute "set rtp+=" . g:opamshare . "/merlin/vim"
-"set rtp+=~/Users/ralphrecto/.vim/ocp-indent-vim
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " Vim Airline
 "enable showing all buffers
