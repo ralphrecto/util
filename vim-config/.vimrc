@@ -1,8 +1,8 @@
 execute pathogen#infect()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                     GENERAL                                  "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ------------------------------------------------------------------------------
+" Text settings
+" ------------------------------------------------------------------------------
 filetype plugin indent on
 syntax on
 set nocompatible
@@ -25,8 +25,17 @@ set term=screen-256color
 set clipboard=unnamed
 set bs=indent,eol,start
 set noshowmode
+set lazyredraw
 
-colorscheme lucid
+" ------------------------------------------------------------------------------
+" Theming
+" ------------------------------------------------------------------------------
+" Set colors
+colorscheme solarized
+
+" Set easymotion colors to be readable with solarized
+"hi EasyMotionTarget ctermbg=red ctermfg=white
+"hi EasyMotionShade  ctermbg=none ctermfg=white
 
 let mapleader = "\<Space>"
 
@@ -40,9 +49,9 @@ endfun
 
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                     KEYBINDS                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ------------------------------------------------------------------------------
+" Keybinds
+" ------------------------------------------------------------------------------
 nmap / <Plug>(easymotion-sn)
 nmap ? <Plug>(easymotion-sn)
 map  n <Plug>(easymotion-next)
@@ -59,7 +68,7 @@ nnoremap <c-p> :bdelete<cr>
 " Leader maps
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
-nnoremap <Leader>o :e
+nnoremap <Leader>o :e<Space>
 nnoremap <Leader>y :w !pbcopy<CR>
 
 let g:tmux_navigator_no_mappings = 1
@@ -75,9 +84,9 @@ nnoremap <Leader>l <C-W>l
 nnoremap <Leader>s <C-W>s
 nnoremap <Leader>v <C-W>v
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                  LANGUAGES                                   "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ------------------------------------------------------------------------------
+" Development/Language customizations
+" ------------------------------------------------------------------------------
 
 " Xi
 au BufRead,BufNewFile *.xi set filetype=xi
@@ -89,10 +98,12 @@ autocmd FileType tex :NoMatchParen
 " tell supertab to call Merlin
 au FileType ocaml call SuperTabSetDefaultCompletionType("<c-x><c-o>")
 
+" .cup
+autocmd BufNewFile,BufRead *.cup setf cup
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                  PLUGINS                                     "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ------------------------------------------------------------------------------
+" Plugins
+" ------------------------------------------------------------------------------
 
 " CtrlP
 let g:netrw_liststyle=3
@@ -120,3 +131,4 @@ set statusline+=%{fugitive#statusline()}
 let g:tmux_navigator_no_mappings = 1
 
 let g:SuperTabDefaultCompletionType = 'context'
+
